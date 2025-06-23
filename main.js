@@ -261,38 +261,42 @@ function updateUI() {
   levelBarEl.style.width = `${(xp / 10000) * 100}%`;
 }
 
-// Event listeners
-spinBtn.addEventListener('click', () => {
-  if (credits < bet) {
-    alert('Not enough credits to spin!');
-    return;
-  }
+// Only attach once
+if (!window.spinHandlerAttached) {
+  window.spinHandlerAttached = true;
 
-  credits -= bet;
-  updateUI();
+  spinBtn.addEventListener('click', () => {
+    console.log('Spin clicked');
 
-  // Immediately show "SPINNING..."
-  ctx.fillStyle = '#111';
-  ctx.fillRect(0, 0, canvas.width, canvas.height);
-  ctx.fillStyle = 'white';
-  ctx.font = '36px Arial';
-  ctx.fillText('SPINNING...', 300, 200);
+    if (credits < bet) {
+      alert('Not enough credits to spin!');
+      return;
+    }
 
-  // Generate the grid but wait 3 seconds before showing result
-  const grid = generateSpinGrid();
-
-  setTimeout(() => {
-    const payout = calculateTotalPayout(grid);
-    const scaledPayout = payout * (bet / 40);
-
-    credits += scaledPayout;
-    currentWin = scaledPayout;
-
+    credits -= bet;
     updateUI();
-    drawGrid(grid); // Draw the final result after 3 seconds
-  }, 3000);
-});
 
+    // Show "SPINNING..." placeholder
+    ctx.fillStyle = '#111';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = 'white';
+    ctx.font = '36px Arial';
+    ctx.fillText('SPINNING...', 300, 200);
+
+    const grid = generateSpinGrid();
+
+    setTimeout(() => {
+      const payout = calculateTotalPayout(grid);
+      const scaledPayout = payout * (bet / 40);
+
+      credits += scaledPayout;
+      currentWin = scaledPayout;
+
+      updateUI();
+      drawGrid(grid);
+    }, 3000);
+  });
+}
 // Allowed bet values
 const betLevels = [40, 80, 120, 240, 480, 720, 1440, 5760];
 
