@@ -100,9 +100,9 @@ decreaseBetBtn.addEventListener('click', () => changeBet('down'));
 preloadImages(() => {
   console.log('All images loaded');
   updateUI();
+  
   const initialGrid = generateSpinGrid();
-  drawGrid(initialGrid);
-
+  drawGrid(initialGrid); // ✅ SAFE to draw now
   spinBtn.disabled = false;
 });
 
