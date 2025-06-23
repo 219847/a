@@ -298,7 +298,7 @@ if (!window.spinHandlerAttached) {
   });
 }
 // Allowed bet values
-const betLevels = [40, 80, 120, 240, 480, 720, 1440, 5760];
+const betLevels = [40, 41, 80, 81, 120, 121, 240, 241, 480, 481, 720, 721, 1440, 1441, 5760, 5761, 23040];
 
 function changeBet(direction) {
   const currentIndex = betLevels.indexOf(bet);
