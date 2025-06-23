@@ -270,16 +270,15 @@ function updateUI() {
 if (!window.spinHandlerAttached) {
   window.spinHandlerAttached = true;
 
-  spinBtn.addEventListener('click', () => {
-    console.log('Spin clicked');
+spinBtn.addEventListener('click', () => {
+  if (credits < bet) {
+    alert('Not enough credits to spin!');
+    return;
+  }
 
-    if (credits < bet) {
-      alert('Not enough credits to spin!');
-      return;
-    }
-
-    credits -= bet;
-    updateUI();
+  credits -= bet;
+  currentWin = 0; // ✅ Important: reset win amount
+  updateUI();     // Make sure this doesn't touch winAmountEl
 
     // Show "SPINNING..." placeholder
     ctx.fillStyle = '#111';
