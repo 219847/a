@@ -262,7 +262,7 @@ function updateUI() {
   creditsEl.textContent = `Credits: ${credits}`;
   betDisplayEl.textContent = `Bet: ${bet}`;
   freeSpinsEl.textContent = `Free Spins: ${freeSpins}`;
-  winAmountEl.textContent = `Win: ${currentWin}`;
+  animateWinAmount(currentWin);
   levelBarEl.style.width = `${(xp / 10000) * 100}%`;
 }
 
@@ -301,6 +301,20 @@ if (!window.spinHandlerAttached) {
       drawGrid(grid);
     }, 3000);
   });
+}
+//count up
+function animateWinAmount(finalAmount) {
+  const increment = bet / 3 / 60; // 1/3 bet per second, running 60 times per second
+  let displayedAmount = 0;
+
+  const interval = setInterval(() => {
+    displayedAmount += increment;
+    if (displayedAmount >= finalAmount) {
+      displayedAmount = finalAmount;
+      clearInterval(interval);
+    }
+    winAmountEl.textContent = `Win: ${Math.floor(displayedAmount)}`;
+  }, 1000 / 60); // 60 FPS
 }
 // Allowed bet values
 const betLevels = [12, 13, 36, 37, 108, 109, 324, 325, 972, 973, 2916, 2917, 8748, 8749, 26244, 26255, 78732];
