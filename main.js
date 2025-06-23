@@ -94,30 +94,6 @@ function drawGrid(grid) {
     }
   }
 }
-
-// Event listeners after variables and functions
-spinBtn.addEventListener('click', () => {
-  if (credits < bet) {
-    alert('Not enough credits to spin!');
-    return;
-  }
-
-  credits -= bet;
-
-  const grid = generateSpinGrid();
-  console.table(grid);
-
-  const payout = calculateTotalPayout(grid);
-  const scaledPayout = payout * (bet / 40);
-
-  currentWin = scaledPayout; // set win before UI update
-  credits += scaledPayout;
-
-  updateUI();   // update UI right after
-
-  drawGrid(grid);
-});
-
 increaseBetBtn.addEventListener('click', () => changeBet('up'));
 decreaseBetBtn.addEventListener('click', () => changeBet('down'));
 
