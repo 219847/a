@@ -285,31 +285,6 @@ function updateUI() {
   levelBarEl.style.width = `${(xp / 10000) * 100}%`;
 }
 
-// Dummy spin
-spinBtn.addEventListener('click', () => {
-  if (credits < bet) {
-    alert('Not enough credits to spin!');
-    return;
-  }
-
-  credits -= bet;
-
-  const grid = generateSpinGrid();
-  console.table(grid);
-
-  const payout = calculateTotalPayout(grid);
-  const scaledPayout = payout * (bet / 40);
-
-  credits += scaledPayout;
-  currentWin = scaledPayout;
-
-  updateUI();
-  
-  drawGrid(grid);  // This draws the actual slot symbols after spin
-
-  // Optionally show "spinning" briefly before showing grid, or animate reels
-});
-
 // Event listeners
 spinBtn.addEventListener('click', () => {
   if (credits < bet) {
