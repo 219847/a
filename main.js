@@ -280,26 +280,27 @@ spinBtn.addEventListener('click', () => {
   currentWin = 0; // ✅ Important: reset win amount
   updateUI();     // Make sure this doesn't touch winAmountEl
 
-    // Show "SPINNING..." placeholder
-    ctx.fillStyle = '#111';
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = 'white';
-    ctx.font = '36px Arial';
-    ctx.fillText('SPINNING...', 300, 200);
+      // SPINNING visual
+  ctx.fillStyle = '#111';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+  ctx.fillStyle = 'white';
+  ctx.font = '36px Arial';
+  ctx.fillText('SPINNING...', 300, 200);
 
-    const grid = generateSpinGrid();
+  const grid = generateSpinGrid();
 
-    setTimeout(() => {
-      const payout = calculateTotalPayout(grid);
-      const scaledPayout = payout * (bet / 40);
+  setTimeout(() => {
+    const payout = calculateTotalPayout(grid);
+    const scaledPayout = payout * (bet / 40);
 
-      credits += scaledPayout;
-      currentWin = scaledPayout;
+    credits += scaledPayout;
+    currentWin = scaledPayout;
 
-      updateUI();
-      drawGrid(grid);
-    }, 3000);
-  });
+    updateUI(); // again, don’t update win here
+    animateWinAmount(currentWin);
+    drawGrid(grid);
+  }, 3000);
+});
 }
 //count up
 function animateWinAmount(finalAmount) {
