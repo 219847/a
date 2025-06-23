@@ -19,19 +19,19 @@ function addCredits() {
 }
 // Images
 const symbolImageURLs = {
-  a: 'https://github.com/219847/a/blob/main/latest.png',
-  b: 'https://github.com/219847/a/blob/main/536.png',
-  c: 'https://github.com/219847/a/blob/main/latest%20(2).png',
-  d: 'https://github.com/219847/a/blob/main/536%20(2).png',
-  e: 'https://github.com/219847/a/blob/main/536%20(3).png',
-  f: 'https://github.com/219847/a/blob/main/536%20(1).png',
-  g: 'https://github.com/219847/a/blob/main/536%20(2)%20(1).png',
-  h: 'https://github.com/219847/a/blob/main/536%20(3)%20(1).png',
-  i: 'https://github.com/219847/a/blob/main/536%20(4).png',
-  j: 'https://github.com/219847/a/blob/main/536%20(5).png',
-  k: 'https://github.com/219847/a/blob/main/536%20(6).png',
-  wild: 'https://github.com/219847/a/blob/main/150.png',
-  freespin: 'https://github.com/219847/a/blob/main/150%20(2).png'
+  a: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/latest.png',
+  b: 'hhttps://raw.githubusercontent.com/219847/a/refs/heads/main/536.png',
+  c: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/latest%20(2).png',
+  d: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/536%20(2).png',
+  e: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/536%20(3).png',
+  f: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/536%20(1).png',
+  g: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/536%20(2)%20(1).png',
+  h: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/536%20(3)%20(1).png',
+  i: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/536%20(4).png',
+  j: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/536%20(5).png',
+  k: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/536%20(6).png',
+  wild: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/150.png',
+  freespin: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/150%20(2).png'
 };
 
 const symbolImages = {};
