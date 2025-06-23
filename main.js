@@ -19,19 +19,19 @@ function addCredits() {
 }
 // Images
 const symbolImageURLs = {
-  a: 'https://static.wikia.nocookie.net/official-florrio/images/9/98/Pharaoh%27s_Crown.png/revision/latest?cb=20250321082520',
-  b: 'https://static.wikia.nocookie.net/official-florrio/images/c/c8/Clover_%28Super%29.png/revision/latest/scale-to-width-down/536?cb=20230123164447',
-  c: 'https://static.wikia.nocookie.net/official-florrio/images/5/56/Bone_%28Super%29.png/revision/latest?cb=20230705164222',
-  d: 'https://static.wikia.nocookie.net/official-florrio/images/6/6a/Bubble_%28Super%29.png/revision/latest/scale-to-width-down/536?cb=20230123161509',
-  e: 'https://static.wikia.nocookie.net/official-florrio/images/a/aa/Bubble_%28Ultra%29.png/revision/latest/scale-to-width-down/536?cb=20230123161504',
-  f: 'https://static.wikia.nocookie.net/official-florrio/images/2/2b/Bubble_%28Mythic%29.png/revision/latest/scale-to-width-down/536?cb=20230123161459',
-  g: 'https://static.wikia.nocookie.net/official-florrio/images/4/45/Bubble_%28Legendary%29.png/revision/latest/scale-to-width-down/536?cb=20230123161452',
-  h: 'https://static.wikia.nocookie.net/official-florrio/images/e/e9/Bubble_%28Epic%29.png/revision/latest/scale-to-width-down/536?cb=20230123161445',
-  i: 'https://static.wikia.nocookie.net/official-florrio/images/b/be/Air_%28Rare%29.png/revision/latest/scale-to-width-down/536?cb=20230123165858',
-  j: 'https://static.wikia.nocookie.net/official-florrio/images/8/8a/Air_%28Unusual%29.png/revision/latest/scale-to-width-down/536?cb=20230123165844',
-  k: 'https://static.wikia.nocookie.net/official-florrio/images/e/ee/Air_%28Common%29.png/revision/latest/scale-to-width-down/536?cb=20230123164755',
-  wild: 'https://static.wikia.nocookie.net/official-florrio/images/6/60/Florr.png/revision/latest/scale-to-width-down/150?cb=20231120133006',
-  freespin: 'https://static.wikia.nocookie.net/official-florrio/images/4/41/FlorrSquare.png/revision/latest/scale-to-width-down/150?cb=20241016154002'
+  a: 'https://static.wikia.nocookie.net/official-florrio/images/9/98/Pharaoh%27s_Crown.png/revision/latest',
+  b: 'https://static.wikia.nocookie.net/official-florrio/images/c/c8/Clover_%28Super%29.png/revision/latest/scale-to-width-down/536',
+  c: 'https://static.wikia.nocookie.net/official-florrio/images/5/56/Bone_%28Super%29.png/revision/latest',
+  d: 'https://static.wikia.nocookie.net/official-florrio/images/6/6a/Bubble_%28Super%29.png/revision/latest/scale-to-width-down/536',
+  e: 'https://static.wikia.nocookie.net/official-florrio/images/a/aa/Bubble_%28Ultra%29.png/revision/latest/scale-to-width-down/536',
+  f: 'https://static.wikia.nocookie.net/official-florrio/images/2/2b/Bubble_%28Mythic%29.png/revision/latest/scale-to-width-down/536',
+  g: 'https://static.wikia.nocookie.net/official-florrio/images/4/45/Bubble_%28Legendary%29.png/revision/latest/scale-to-width-down/536',
+  h: 'https://static.wikia.nocookie.net/official-florrio/images/e/e9/Bubble_%28Epic%29.png/revision/latest/scale-to-width-down/536',
+  i: 'https://static.wikia.nocookie.net/official-florrio/images/b/be/Air_%28Rare%29.png/revision/latest/scale-to-width-down/536',
+  j: 'https://static.wikia.nocookie.net/official-florrio/images/8/8a/Air_%28Unusual%29.png/revision/latest/scale-to-width-down/536',
+  k: 'https://static.wikia.nocookie.net/official-florrio/images/e/ee/Air_%28Common%29.png/revision/latest/scale-to-width-down/536',
+  wild: 'https://static.wikia.nocookie.net/official-florrio/images/6/60/Florr.png/revision/latest/scale-to-width-down/150',
+  freespin: 'https://static.wikia.nocookie.net/official-florrio/images/4/41/FlorrSquare.png/revision/latest/scale-to-width-down/150'
 };
 
 const symbolImages = {};
