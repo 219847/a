@@ -20,7 +20,7 @@ function addCredits() {
 // Images
 const symbolImageURLs = {
   a: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/latest.png',
-  b: 'hhttps://raw.githubusercontent.com/219847/a/refs/heads/main/536.png',
+  b: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/536.png',
   c: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/latest%20(2).png',
   d: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/536%20(2).png',
   e: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/536%20(3).png',
