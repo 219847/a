@@ -161,17 +161,22 @@ function checkPayline(grid, payline) {
 
     if (i === 0) {
       if (symbol === 'wild') {
-        firstSymbol = null; // wait for a real symbol
+        // Wait until we find the first non-wild
+        continue;
       } else {
         firstSymbol = symbol;
+        matchCount = 1;
       }
-      matchCount = 1;
     } else {
-      if (symbol === firstSymbol || symbol === 'wild' || firstSymbol === null) {
-        if (firstSymbol === null && symbol !== 'wild') firstSymbol = symbol;
+      if (firstSymbol === null) {
+        if (symbol !== 'wild') {
+          firstSymbol = symbol;
+        }
+        matchCount++;
+      } else if (symbol === firstSymbol || symbol === 'wild') {
         matchCount++;
       } else {
-        break; // streak ends
+        break;
       }
     }
   }
