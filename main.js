@@ -206,7 +206,7 @@ const symbolWeights = {
   j: 12,
   k: 12,
   wild: 4,       // appears only on reels 2, 3, 4, 5
-  freespin: 3    // appears only on reels 1, 2, 3
+  freespin: 8    // appears only on reels 1, 2, 3
 };
 function getRandomSymbol(reelIndex) {
   const pool = [];
