@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Slot Machine</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Top bar -->
+  <div id="top-bar">
+    <span id="credits">Credits: 10000</span>
+    <button id="add-credits-btn" onclick="addCredits()">Add 25000 Credits</button>
+    <div id="level-bar-container">
+      <div id="level-bar"></div>
+    </div>
+  </div>
+
+  <!-- Canvas for slot reels -->
+  <canvas id="slot-canvas" width="800" height="400"></canvas>
+
+  <!-- Bottom bar -->
+  <div id="bottom-bar">
+    <span id="free-spins-count">Free Spins: 0</span>
+    <div id="bet-controls">
+      <button id="decrease-bet" type="button">-</button>
+      <span id="bet-display">Bet: 40</span>
+      <button id="increase-bet" type="button">+</button>
+    </div>
+    <span id="win-amount">Win: 0</span>
+    <button id="spin-btn" type="button">Spin</button>
+  </div>
+
+  <!-- Audio elements -->
+  <audio id="bg-music" loop></audio>
+  <audio id="free-spin-music" loop></audio>
+  <audio id="win-countup-sound"></audio>
+  <audio id="reel-stop-sound"></audio>
+
+  <script src="main.js"></script>
+</body>
+</html>
