@@ -294,27 +294,34 @@ spinBtn.addEventListener('click', () => {
     const scaledPayout = payout * (bet / 40);
 
     credits += scaledPayout;
-    currentWin = scaledPayout;
-
-    updateUI(); // again, don’t update win here
-    animateWinAmount(currentWin);
     drawGrid(grid);
+    animateWinCount(scaledPayout);
+    updateUI(); // only once; win text handled by animation
   }, 3000);
 });
 }
 //count up
-function animateWinAmount(finalAmount) {
-  const increment = bet / 3 / 60; // 1/3 bet per second, running 60 times per second
-  let displayedAmount = 0;
+function animateWinCount(finalAmount, duration = (bet / 3) * 1000) {
+  let start = 0;
+  const startTime = performance.now();
+  spinBtn.disabled = true;
 
-  const interval = setInterval(() => {
-    displayedAmount += increment;
-    if (displayedAmount >= finalAmount) {
-      displayedAmount = finalAmount;
-      clearInterval(interval);
+  function step(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    currentWin = Math.floor(finalAmount * progress);
+    winAmountEl.textContent = `Win: ${currentWin}`;
+
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    } else {
+      currentWin = finalAmount;
+      winAmountEl.textContent = `Win: ${currentWin}`;
+      spinBtn.disabled = false;
     }
-    winAmountEl.textContent = `Win: ${Math.floor(displayedAmount)}`;
-  }, 1000 / 60); // 60 FPS
+  }
+
+  requestAnimationFrame(step);
 }
 // Allowed bet values
 const betLevels = [12, 13, 36, 37, 108, 109, 324, 325, 972, 973, 2916, 2917, 8748, 8749, 26244, 26255, 78732];
