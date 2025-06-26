@@ -304,7 +304,13 @@ spinBtn.addEventListener('click', () => {
 function animateWinCount(finalAmount, duration = (bet / 3) * 1000) {
   let start = 0;
   const startTime = performance.now();
+  const winSound = document.getElementById('win-sound');
   spinBtn.disabled = true;
+
+  // Start sound (and loop it)
+  winSound.currentTime = 0;
+  winSound.loop = true;
+  winSound.play().catch(e => console.warn("Sound play blocked:", e));
 
   function step(currentTime) {
     const elapsed = currentTime - startTime;
@@ -318,6 +324,8 @@ function animateWinCount(finalAmount, duration = (bet / 3) * 1000) {
       currentWin = finalAmount;
       winAmountEl.textContent = `Win: ${currentWin}`;
       spinBtn.disabled = false;
+      winSound.pause();           // Stop music
+      winSound.currentTime = 0;  // Reset position
     }
   }
 
