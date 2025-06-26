@@ -299,8 +299,6 @@ function animateWinCount(finalAmount, duration) {
 
   requestAnimationFrame(step);
 }
-  requestAnimationFrame(step);
-}
 // Only attach once
 if (!window.spinHandlerAttached) {
   window.spinHandlerAttached = true;
