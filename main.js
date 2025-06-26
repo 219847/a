@@ -271,7 +271,7 @@ function animateWinCount(finalAmount, duration) {
   // Default duration: count up at speed of 1/3 bet per second
   // So duration = (finalAmount) / (bet / 3) seconds -> in ms:
   if (duration === undefined) {
-    duration = (finalAmount / (bet / 3)) * 1000; 
+    duration = (finalAmount / (bet / 3)) * 500; 
   }
 
   const winSound = document.getElementById('win-sound');
