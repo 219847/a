@@ -19,19 +19,23 @@ function addCredits() {
 }
 // Images
 const symbolImageURLs = {
-  a: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/latest.png',
-  b: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/536.png',
-  c: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/latest%20(2).png',
-  d: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/536%20(2).png',
-  e: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/536%20(3).png',
-  f: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/536%20(1).png',
-  g: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/536%20(2)%20(1).png',
-  h: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/536%20(3)%20(1).png',
-  i: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/536%20(4).png',
-  j: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/536%20(5).png',
-  k: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/536%20(6).png',
-  wild: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/150.png',
-  freespin: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/150%20(2).png'
+  // main symbol
+  a: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_451.png',
+  //high payout
+  b: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_King's_Highway_2.svg.png',
+  c: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_King's_Highway_401.svg.png',
+  d: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_King's_Highway_11A.svg.png',
+  //moderate payout
+  e: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_King's_Highway_92.svg.png',
+  f: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_King's_Highway_83.svg.png',
+  g: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/800px-Ontario_King's_Highway_22.svg.png',
+  h: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_King's_Highway_3.svg.png',
+  // low payout
+  i: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_10.svg.png',
+  j: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_27.svg.png',
+  k: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_7.svg.png',
+  wild: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/image-removebg-preview.png',
+  freespin: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_QEW.svg.png'
 };
 
 const symbolImages = {};
