@@ -267,7 +267,13 @@ function updateUI() {
   levelBarEl.style.width = `${(xp / 10000) * 100}%`;
 }
 //animation
-function animateWinCount(finalAmount, duration = total*bet/(bet * 3000)) {
+function animateWinCount(finalAmount, duration) {
+  // Default duration: count up at speed of 1/3 bet per second
+  // So duration = (finalAmount) / (bet / 3) seconds -> in ms:
+  if (duration === undefined) {
+    duration = (finalAmount / (bet / 3)) * 1000; 
+  }
+
   const winSound = document.getElementById('win-sound');
   const startTime = performance.now();
   spinBtn.disabled = true;
@@ -291,6 +297,8 @@ function animateWinCount(finalAmount, duration = total*bet/(bet * 3000)) {
     }
   }
 
+  requestAnimationFrame(step);
+}
   requestAnimationFrame(step);
 }
 // Only attach once
