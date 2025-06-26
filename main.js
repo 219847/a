@@ -301,7 +301,7 @@ spinBtn.addEventListener('click', () => {
 });
 }
 //count up
-function animateWinCount(finalAmount, duration = (bet / 3) * 1000) {
+function animateWinAmount(finalAmount, duration = (bet / 3) * 1000) {
   let start = 0;
   const startTime = performance.now();
   const winSound = document.getElementById('win-sound');
