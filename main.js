@@ -195,7 +195,7 @@ function calculateTotalPayout(grid) {
 }
 // Weighted symbol distribution (higher weight = more common)
 const symbolWeights = {
-  a: 8,   // special stacked symbol
+  a: 15,   // special stacked symbol
   b: 8,
   c: 8,
   d: 8,
