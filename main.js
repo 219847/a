@@ -268,6 +268,9 @@ function updateUI() {
 }
 //animation
 function animateWinCount(finalAmount, duration = (finalAmount * 3 * 1000) / bet) {
+  // Cap max duration to, say, 5 seconds (5000 ms)
+  duration = Math.min(duration, 5000);
+
   let startTime = null;
   const winSound = document.getElementById('win-sound');
   spinBtn.disabled = true;
