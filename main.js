@@ -56,6 +56,7 @@ function updateUI() {
   creditsEl.textContent = `Credits: ${credits}`;
   betDisplayEl.textContent = `Bet: ${bet}`;
   freeSpinsEl.textContent = `Free Spins: ${freeSpins}`;
+  // Just update the text directly here, do not call animation function in updateUI
   winAmountEl.textContent = `Win: ${currentWin}`;
   levelBarEl.style.width = `${(xp / 10000) * 100}%`;
 }
