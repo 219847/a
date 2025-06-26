@@ -326,7 +326,6 @@ spinBtn.addEventListener('click', () => {
     credits += scaledPayout;
     drawGrid(grid);
     animateWinCount(scaledPayout);
-    updateUI(); // only once; win text handled by animation
   }, 3000);
 });
 }
