@@ -38,7 +38,7 @@ const symbolImages = {};
 
 // Game variables
 let credits = 1000000;
-let bet = 120;
+let bet = 29160;
 let freeSpins = 0;
 let currentWin = 0;
 let xp = 0;
