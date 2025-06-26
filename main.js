@@ -19,18 +19,14 @@ function addCredits() {
 }
 // Images
 const symbolImageURLs = {
-  // main symbol
   a: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_451.png',
-  //high payout
-  b: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_King's_Highway_2.svg.png',
-  c: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_King's_Highway_401.svg.png',
-  d: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_King's_Highway_11A.svg.png',
-  //moderate payout
-  e: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_King's_Highway_92.svg.png',
-  f: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_King's_Highway_83.svg.png',
-  g: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/800px-Ontario_King's_Highway_22.svg.png',
-  h: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_King's_Highway_3.svg.png',
-  // low payout
+  b: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_King\'s_Highway_2.svg.png',
+  c: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_King\'s_Highway_401.svg.png',
+  d: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_King\'s_Highway_11A.svg.png',
+  e: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_King\'s_Highway_92.svg.png',
+  f: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_King\'s_Highway_83.svg.png',
+  g: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/800px-Ontario_King\'s_Highway_22.svg.png',
+  h: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_King\'s_Highway_3.svg.png',
   i: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_10.svg.png',
   j: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_27.svg.png',
   k: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_7.svg.png',
