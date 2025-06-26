@@ -267,7 +267,7 @@ function updateUI() {
   levelBarEl.style.width = `${(xp / 10000) * 100}%`;
 }
 //animation
-function animateWinCount(finalAmount, duration = total*bet/(bet * 3000) {
+function animateWinCount(finalAmount, duration = total*bet/(bet * 3000)) {
   const winSound = document.getElementById('win-sound');
   const startTime = performance.now();
   spinBtn.disabled = true;
