@@ -267,9 +267,8 @@ function updateUI() {
   levelBarEl.style.width = `${(xp / 10000) * 100}%`;
 }
 //animation
-function animateWinCount(finalAmount, duration = (bet / 3) * 1000) {
-  let start = 0;
-  const startTime = performance.now();
+function animateWinCount(finalAmount, duration = (finalAmount * 3 * 1000) / bet) {
+  let startTime = null;
   const winSound = document.getElementById('win-sound');
   spinBtn.disabled = true;
 
@@ -278,8 +277,9 @@ function animateWinCount(finalAmount, duration = (bet / 3) * 1000) {
   winSound.loop = true;
   winSound.play().catch(e => console.warn("Sound play blocked:", e));
 
-  function step(currentTime) {
-    const elapsed = currentTime - startTime;
+  function step(timestamp) {
+    if (!startTime) startTime = timestamp;
+    const elapsed = timestamp - startTime;
     const progress = Math.min(elapsed / duration, 1);
     currentWin = Math.floor(finalAmount * progress);
     winAmountEl.textContent = `Win: ${currentWin}`;
@@ -290,8 +290,8 @@ function animateWinCount(finalAmount, duration = (bet / 3) * 1000) {
       currentWin = finalAmount;
       winAmountEl.textContent = `Win: ${currentWin}`;
       spinBtn.disabled = false;
-      winSound.pause();           // Stop music
-      winSound.currentTime = 0;  // Reset position
+      winSound.pause();
+      winSound.currentTime = 0;
     }
   }
 
