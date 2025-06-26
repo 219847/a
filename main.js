@@ -265,7 +265,37 @@ function updateUI() {
   animateWinAmount(currentWin);
   levelBarEl.style.width = `${(xp / 10000) * 100}%`;
 }
+//animation
+function animateWinCount(finalAmount, duration = (bet / 3) * 1000) {
+  let start = 0;
+  const startTime = performance.now();
+  const winSound = document.getElementById('win-sound');
+  spinBtn.disabled = true;
 
+  // Start sound (and loop it)
+  winSound.currentTime = 0;
+  winSound.loop = true;
+  winSound.play().catch(e => console.warn("Sound play blocked:", e));
+
+  function step(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    currentWin = Math.floor(finalAmount * progress);
+    winAmountEl.textContent = `Win: ${currentWin}`;
+
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    } else {
+      currentWin = finalAmount;
+      winAmountEl.textContent = `Win: ${currentWin}`;
+      spinBtn.disabled = false;
+      winSound.pause();           // Stop music
+      winSound.currentTime = 0;  // Reset position
+    }
+  }
+
+  requestAnimationFrame(step);
+}
 // Only attach once
 if (!window.spinHandlerAttached) {
   window.spinHandlerAttached = true;
@@ -301,36 +331,7 @@ spinBtn.addEventListener('click', () => {
 });
 }
 //count up
-function animateWinAmount(finalAmount, duration = (bet / 3) * 1000) {
-  let start = 0;
-  const startTime = performance.now();
-  const winSound = document.getElementById('win-sound');
-  spinBtn.disabled = true;
 
-  // Start sound (and loop it)
-  winSound.currentTime = 0;
-  winSound.loop = true;
-  winSound.play().catch(e => console.warn("Sound play blocked:", e));
-
-  function step(currentTime) {
-    const elapsed = currentTime - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-    currentWin = Math.floor(finalAmount * progress);
-    winAmountEl.textContent = `Win: ${currentWin}`;
-
-    if (progress < 1) {
-      requestAnimationFrame(step);
-    } else {
-      currentWin = finalAmount;
-      winAmountEl.textContent = `Win: ${currentWin}`;
-      spinBtn.disabled = false;
-      winSound.pause();           // Stop music
-      winSound.currentTime = 0;  // Reset position
-    }
-  }
-
-  requestAnimationFrame(step);
-}
 // Allowed bet values
 const betLevels = [12, 13, 36, 37, 108, 109, 324, 325, 972, 973, 2916, 2917, 8748, 8749, 26244, 26255, 78732];
 
