@@ -262,7 +262,7 @@ function updateUI() {
   creditsEl.textContent = `Credits: ${credits}`;
   betDisplayEl.textContent = `Bet: ${bet}`;
   freeSpinsEl.textContent = `Free Spins: ${freeSpins}`;
-  animateWinAmount(currentWin);
+  animateWinCount(currentWin);
   levelBarEl.style.width = `${(xp / 10000) * 100}%`;
 }
 //animation
