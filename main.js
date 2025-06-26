@@ -268,14 +268,9 @@ function updateUI() {
 }
 //animation
 function animateWinCount(finalAmount, duration = (bet / 3) * 1000) {
-  let start = 0;
-  const startTime = performance.now();
   const winSound = document.getElementById('win-sound');
-
-  // Disable the spin button during the animation
+  const startTime = performance.now();
   spinBtn.disabled = true;
-
-  // Start and loop the win sound
   winSound.currentTime = 0;
   winSound.loop = true;
   winSound.play().catch(e => console.warn("Sound play blocked:", e));
@@ -285,15 +280,14 @@ function animateWinCount(finalAmount, duration = (bet / 3) * 1000) {
     const progress = Math.min(elapsed / duration, 1);
     currentWin = Math.floor(finalAmount * progress);
     winAmountEl.textContent = `Win: ${currentWin}`;
-
     if (progress < 1) {
       requestAnimationFrame(step);
     } else {
       currentWin = finalAmount;
       winAmountEl.textContent = `Win: ${currentWin}`;
-      spinBtn.disabled = false; // Re-enable the spin button
-      winSound.pause();         // Stop the win sound
-      winSound.currentTime = 0; // Reset the sound position
+      winSound.pause();
+      winSound.currentTime = 0;
+      spinBtn.disabled = false;
     }
   }
 
