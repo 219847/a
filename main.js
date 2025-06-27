@@ -189,18 +189,23 @@ function checkPayline(grid, payline) {
 function calculateTotalPayout(grid) {
   let total = 0;
 
-  // Paylines (regular payout)
   for (const payline of paylines) {
     total += checkPayline(grid, payline);
   }
 
-  // Freespin symbols (each pays 10x bet)
+  // Count total number of freespin symbols across the grid
+  let freespinCount = 0;
   for (let col = 0; col < grid.length; col++) {
     for (let row = 0; row < grid[col].length; row++) {
       if (grid[col][row] === 'freespin') {
-        total += 10 * bet;
+        freespinCount++;
       }
     }
+  }
+
+  // Only pay 10× bet **once** if at least 3 freespins appear
+  if (freespinCount >= 3) {
+    total += 10 * bet;
   }
 
   return total;
