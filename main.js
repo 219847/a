@@ -30,8 +30,8 @@ const symbolImageURLs = {
   i: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_10.svg.png',
   j: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_27.svg.png',
   k: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_7.svg.png',
-  wild: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/image-removebg-preview.png',
-  freespin: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_QEW.svg.png'
+  wild: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/Ontario_QEW.svg.png',
+  freespin: 'https://raw.githubusercontent.com/219847/a/refs/heads/main/image-removebg-preview.png'
 };
 
 const symbolImages = {};
