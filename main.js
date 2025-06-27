@@ -223,8 +223,9 @@ const symbolWeights = {
   i: 12,
   j: 12,
   k: 12,
-  wild: 4,       // appears only on reels 2, 3, 4, 5
-  freespin: 8    // appears only on reels 1, 2, 3
+  wild: 12,       // appears only on reels 2, 3, 4, 5
+  freespin: 0    // appears only on reels 1, 2, 3
+  //freespin's 8 distribution moved to wild
 };
 function getRandomSymbol(reelIndex) {
   const pool = [];
