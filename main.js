@@ -188,9 +188,21 @@ function checkPayline(grid, payline) {
 // Calculate total payout for a spin grid
 function calculateTotalPayout(grid) {
   let total = 0;
+
+  // Paylines (regular payout)
   for (const payline of paylines) {
     total += checkPayline(grid, payline);
   }
+
+  // Freespin symbols (each pays 10x bet)
+  for (let col = 0; col < grid.length; col++) {
+    for (let row = 0; row < grid[col].length; row++) {
+      if (grid[col][row] === 'freespin') {
+        total += 10 * bet;
+      }
+    }
+  }
+
   return total;
 }
 // Weighted symbol distribution (higher weight = more common)
