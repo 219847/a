@@ -135,16 +135,16 @@ const paylines = [
 // Paytable for symbols
 const paytable = {
   a: {2: 2, 3: 20, 4: 50, 5: 150},
-  b: {3: 30, 4: 100, 5: 300},
-  c: {3: 30, 4: 100, 5: 300},
-  d: {3: 30, 4: 100, 5: 300},
-  e: {3: 20, 4: 100, 5: 300},
-  f: {3: 20, 4: 80, 5: 300},
-  g: {3: 20, 4: 80, 5: 300},
-  h: {3: 20, 4: 80, 5: 300},
-  i: {3: 10, 4: 50, 5: 200},
-  j: {3: 10, 4: 50, 5: 200},
-  k: {3: 10, 4: 50, 5: 200}
+  b: {3: 15, 4: 50, 5: 150},
+  c: {3: 15, 4: 50, 5: 150},
+  d: {3: 15, 4: 50, 5: 150},
+  e: {3: 10, 4: 50, 5: 150},
+  f: {3: 10, 4: 40, 5: 150},
+  g: {3: 10, 4: 40, 5: 150},
+  h: {3: 10, 4: 40, 5: 150},
+  i: {3: 5, 4: 25, 5: 100},
+  j: {3: 5, 4: 25, 5: 100},
+  k: {3: 5, 4: 25, 5: 100}
   // wild and freespin payouts handled separately or ignored
 };
 
@@ -289,7 +289,7 @@ function animateWinCount(finalAmount, duration) {
   // Default duration: count up at speed of 1/3 bet per second
   // So duration = (finalAmount) / (bet / 3) seconds -> in ms:
   if (duration === undefined) {
-    duration = (finalAmount / (bet / 3)) * 500; 
+    duration = (finalAmount / (bet / 3)) * 1000; 
   }
 
   const winSound = document.getElementById('win-sound');
