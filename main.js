@@ -12,6 +12,44 @@ const decreaseBetBtn = document.getElementById('decrease-bet');
 
 const canvas = document.getElementById('slot-canvas');
 const ctx = canvas.getContext('2d');
+//xp system
+function grantXP(winAmount) {
+  let xpGain = Math.floor(winAmount); // 1 XP per credit won (can tweak this)
+  xp += xpGain;
+  checkLevelUp();
+}
+//lvl req calc
+function getXPNeeded(level) {
+  return 500 + Math.floor(500 * Math.pow(1.2, level - 1));
+}
+//level up check 
+function checkLevelUp() {
+  let xpNeeded = getXPNeeded(level);
+
+  while (xp >= xpNeeded) {
+    xp -= xpNeeded;
+    level++;
+    alert(`🎉 Level up! You reached level ${level}`);
+    xpNeeded = getXPNeeded(level);
+  }
+
+  updateLevelUI();
+}
+//update xp bar
+function updateLevelUI() {
+  const xpNeeded = getXPNeeded(level);
+  levelBarEl.style.width = `${(xp / xpNeeded) * 100}%`;
+  document.getElementById('level-display').textContent = `Level: ${level}`;
+}
+// local storage
+function saveProgress() {
+  localStorage.setItem('slot-xp', xp);
+  localStorage.setItem('slot-level', level);
+}
+function loadProgress() {
+  xp = parseInt(localStorage.getItem('slot-xp')) || 0;
+  level = parseInt(localStorage.getItem('slot-level')) || 1;
+}
 // add credits
 function addCredits() {
   credits += 25000;
@@ -347,6 +385,7 @@ spinBtn.addEventListener('click', () => {
     credits += scaledPayout;
     drawGrid(grid);
     animateWinCount(scaledPayout);
+    grantXP(scaledPayout);
   }, 3000);
 });
 }
