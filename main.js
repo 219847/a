@@ -313,21 +313,10 @@ function generateSpinGrid() {
 
   return grid;
 }
-
-// Update UI
-function updateUI() {
-  creditsEl.textContent = `Credits: ${credits}`;
-  betDisplayEl.textContent = `Bet: ${bet}`;
-  freeSpinsEl.textContent = `Free Spins: ${freeSpins}`;
-  animateWinCount(currentWin);
-  levelBarEl.style.width = `${(xp / 10000) * 100}%`;
-}
 //animation
-function animateWinCount(finalAmount, duration) {
-  // Default duration: count up at speed of 1/3 bet per second
-  // So duration = (finalAmount) / (bet / 3) seconds -> in ms:
+function animateWinCount(finalAmount, duration, callback) {
   if (duration === undefined) {
-    duration = (finalAmount / (bet / 3)) * 1000; 
+    duration = (finalAmount / (bet / 3)) * 1000;
   }
 
   const winSound = document.getElementById('win-sound');
@@ -350,6 +339,7 @@ function animateWinCount(finalAmount, duration) {
       winSound.pause();
       winSound.currentTime = 0;
       spinBtn.disabled = false;
+      if (callback) callback(); // ✅ Call it here
     }
   }
 
@@ -384,8 +374,10 @@ spinBtn.addEventListener('click', () => {
 
     credits += scaledPayout;
     drawGrid(grid);
-    animateWinCount(scaledPayout);
-    grantXP(scaledPayout);
+    animateWinCount(scaledPayout, undefined, () => {
+      grantXP(scaledPayout);
+      updateLevelUI();
+    });
   }, 3000);
 });
 }
