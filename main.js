@@ -384,7 +384,7 @@ spinBtn.addEventListener('click', () => {
 //count up
 
 // Allowed bet values
-const betLevels = [120, 130, 360, 370, 1080, 1090, 3240, 3250, 9720, 9730, 29160, 29170, 87480, 87490, 262440, 262550, 787320];
+const betLevels = [120, 130, 360, 370, 1080, 1090, 3240, 3250, 9720, 9730, 29160, 29170, 87480, 87490, 262440, 262550, 787320, 787330, 2361960, 2361970, 7085880, 7085890, 21257640, 21257650, 63772920];
 
 function changeBet(direction) {
   const currentIndex = betLevels.indexOf(bet);
